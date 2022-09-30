@@ -1,0 +1,71 @@
+h1{
+	text-align: center;
+	transform: translate(0%,240%)
+}
+
+
+#container{
+	width: 1000px;
+	height: 400px;
+	background-color: #232323;
+	padding: 24px;
+	position: absolute;
+	border-radius: 24px;
+	/* 让🔥元素在整个页面中居中 */
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+}
+
+
+.item{
+	/* 🔥往左浮动 */
+	float: left;
+	margin: 0 4px;
+	border-radius: 8px;
+	width: 64px;
+	height: 100%;
+	background-color: #cedaff;
+	/* 🔥居中裁切！ */
+	background-size: cover;
+	background-position: center;
+	/* 🔥增加宽度的动画 */
+	transition: width 300ms;
+}
+
+
+/* 👇最大化的显示 */
+/* ⚡️实现方式一 */
+.active{
+	width: 380px;
+}
+
+/* ⚡️实现方案二 */
+/* .item:hover{
+	width: 380px;
+} */
+
+/* 🔥 nth-child 是从一组元素中选取其中某一项，通常用于列表！ */
+.item:nth-child(1){
+	background-image: url('../../assets/img/img_01.jpg')
+}
+
+.item:nth-child(2){
+	background-image: url('../../assets/img/img_02.jpg')
+}
+
+.item:nth-child(3){
+	background-image: url('../../assets/img/img_03.jpg')
+}
+
+.item:nth-child(4){
+	background-image: url('../../assets/img/img_04.jpg')
+}
+
+.item:nth-child(5){
+	background-image: url('../../assets/img/img_05.jpg')
+}
+
+.item:nth-child(6){
+	background-image: url('../../assets/img/img_06.jpg')
+}
