@@ -3,7 +3,7 @@ import logo from './logo.svg'
 import './App.css'
 import Sliders from './components/Slider/Sliders'
 import Button, {RoundedButton} from './components/Button/Button'
-
+import Banner from './components/Banner/Banner'
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
 		<RoundedButton size='large' children='大按钮'/>
 		{/* 🔥🔥🔥嵌套组件！用 RoundedButton 的类型定义 Button 的类型！！*/}
 		<Button as={RoundedButton} size='small' children='中按钮'/>
+		<Banner />
     </div>
   );
 }
