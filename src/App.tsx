@@ -15,6 +15,7 @@ function App() {
 		<RoundedButton size='large' children='大按钮'/>
 		{/* 🔥🔥🔥嵌套组件！用 RoundedButton 的类型定义 Button 的类型！！*/}
 		<Button as={RoundedButton} size='small' children='中按钮'/>
+
 		<Banner />
     </div>
   );
