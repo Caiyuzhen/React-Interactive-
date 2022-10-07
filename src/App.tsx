@@ -4,6 +4,7 @@ import './App.css'
 import Sliders from './components/Slider/Sliders'
 import Button, {RoundedButton} from './components/Button/Button'
 import Banner from './components/Banner/Banner'
+import Button1 from './components/Button/Button1'
 
 function App() {
   return (
@@ -17,6 +18,12 @@ function App() {
 		<Button as={RoundedButton} size='small' children='中按钮'/>
 
 		<Banner />
+
+		<Button1 
+			rounded 
+			variant='LightMode'
+			style={{}} 
+			>这是按钮1</Button1>
     </div>
   );
 }

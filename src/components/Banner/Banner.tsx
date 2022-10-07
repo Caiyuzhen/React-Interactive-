@@ -9,14 +9,15 @@ import './banner.css'
 	*@param {*} interval
 */
 
-// 时间间隔
+// 🔥🔥每隔多少秒自动翻页！！声明 callback: (x:number)=>void 表示声明了一个函数，函数返回值为 void
 function useInterval(callback: (x:number)=>void, interval: number) : void {
+	
 	const time = useEffect(() => {
 		const start = new Date().getTime()
 		const I = setInterval(() => {
 			callback( (new Date().getTime()) - start )
 		}, interval)
-		clearInterval(I)
+
 		return () => clearInterval(I)
 	}, [])
 }
@@ -28,13 +29,16 @@ function useInterval(callback: (x:number)=>void, interval: number) : void {
  * @param {*} N 
  */
 
-function useSlider(N:number, speed = 3000) : number{
+
+//🔥🔥翻页的具体方法！
+function useSlider(N:number, speed = 2000) : number{
 
 	const [slider, setSlider] = useState(0) //slider 表示播放到第几张了
 
 	useInterval((diff) : void => {
-		setSlider(_ => Math.floor(diff / speed) % N)
+		setSlider(_ => Math.floor(diff / speed) % N) //返回最大整数，每隔 2 秒翻页，翻到最后一张时，从第一张开始
 	}, 300)
+	
 	return slider
 }
 
