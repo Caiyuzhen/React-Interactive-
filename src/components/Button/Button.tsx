@@ -1,9 +1,10 @@
-import React, { ReactNode } from "react"
-/*
-	🐲 可以自定义组件类型！【多态组件】！
+/*🐲 🎈 TSX 实现多态组件的写法
 		比如 as 为 p 则是 p 标签！
 		as 为 h1 则是 h1 标签！
 */
+
+import React, { ReactNode } from "react"
+
 
 
 
@@ -64,10 +65,11 @@ export function RoundedButton({style, size='medium', ...rest}: React.ComponentPr
 		}
 	}[size] //🔥相当于 sizeStyle[size], 根据 size 来索引！
 
+
 	return (
 		<button 
 			style={{
-				...style, //解构出所有 props 样式！
+				...style, //⚡️⚡️表示继承自 Button 组件的样式！放上面是为了让👇下面子定义的样式能够覆盖原来 Button 的样式！比如都写了 background
 				...sizeStyle, //🔥🔥解构出 sizeStyle 样式！
 				border: 'none',
 				borderRadius: 200,

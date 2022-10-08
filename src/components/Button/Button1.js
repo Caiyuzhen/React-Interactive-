@@ -1,17 +1,19 @@
-import React from 'react';
+//传统的写法，variant 全部写在一个 button 内
 
+
+import React from 'react';
 
 
 //...rest 拿到剩余参数, ⚡️定义 style 的 props 才能做到样式的合并！
 const Button1 = ({style, rounded, variant, children, ...rest}) => {
 
-	//🔥组件的多态写法一: 单独抽离样式（步骤1） ->  定义样式(比如圆角）
+	//🔥多种变量组件的写法一: 单独抽离样式（步骤1） ->  定义样式(比如圆角）
 	const roundedStyle = {
 		borderRadius: 24,
 	}
 
 
-	//🔥组件的多态写法二: 根据条件判断样式（步骤1） ->  定义样式(比如深浅模式）
+	//🔥多种变量组件的写法二: 根据条件判断样式（步骤1） ->  定义样式(比如深浅模式）
 	let variantStyle = {
 		DarkMode: {
 			backgroundColor: '#000080',
@@ -37,8 +39,8 @@ const Button1 = ({style, rounded, variant, children, ...rest}) => {
 					backgroundColor: 'MediumSeaGreen',
 					color: 'white',
 					cursor: 'pointer',
-					...(rounded && roundedStyle),//🔥组件的多态写法一：单独抽离样式（步骤2）  ->  判断 rounded 是否存在，存在的话就给 roundedStyle 的样式
-					...variantStyle,//🔥组件的多态写法二: 根据条件判断样式（步骤2） ->  判断是哪个 variant，然后给 variantStyle 的样式
+					...(rounded && roundedStyle),//🔥多种变量组件的写法一：单独抽离样式（步骤2）  ->  判断 rounded 是否存在，存在的话就给 roundedStyle 的样式
+					...variantStyle,//🔥多种变量组件的写法二: 根据条件判断样式（步骤2） ->  判断是哪个 variant，然后给 variantStyle 的样式
 					...style,//⚡️⚡️拿到剩余参数！不然不生效
 				}}
 			{...rest}//⚡️⚡️拿到剩余参数！
