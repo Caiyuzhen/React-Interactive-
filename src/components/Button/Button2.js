@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
-// 👆🔥🔥通过注释来动态的引入 babel 的翻译器，用 emotion 的翻译器！！
+// 通过注释来动态的引入 babel 的翻译器，用 emotion 的翻译器！！
 
 
-/*🐲🎈JSX 实现多态组件的写法
+/*JSX 实现多态组件的写法
 		   比如 as 为 p 则是 p 标签！
 		   as 为 h1 则是 h1 标签！ */
 
@@ -11,7 +11,7 @@ import { css } from '@emotion/react'
 
 
 
-//🔥 as 用来替换元素
+//as 用来替换元素
 //相当于组件的基座
 export function Button2({as, style, ...rest}) {
 
@@ -44,8 +44,8 @@ export function Button2({as, style, ...rest}) {
 
 
 
-//🔥一个新的按钮，传入到上面的{多态组件}去做测试（可以继承多态组件的样式)
-//⚡️⚡️记得要入参！不然作为类型传入 Button 2 时没法获得样式！！
+//一个新的按钮，传入到上面的{多态组件}去做测试（可以继承多态组件的样式)
+//记得要入参！不然作为类型传入 Button 2 时没法获得样式！！
 export function NewButton({style, ...rest}) {//这里也需要传入 style，不然 style 会被 Button2 的给覆盖！
 	return (
 		<button
@@ -78,7 +78,8 @@ export function GhostButton({style, ...rest}) {
 
 
 //也可以在这一层导出最终的组件，
-export default ({variant, ...rest}) => { //🔥🔥🔥加括号表示解构 {variant} , 拿到参数
+export default ({variant, ...rest}) => { //加括号表示解构 {variant} , 拿到参数
 	if(variant === 'NewButton') return <Button2 as={NewButton} {...rest}/>
 	if(variant === 'GhostButton') return <Button2 as={GhostButton} {...rest}/>
+	return null;
 }

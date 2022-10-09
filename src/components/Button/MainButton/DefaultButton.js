@@ -6,4 +6,5 @@ import { Button2 } from "../Button2"
 export default ({variant, ...rest}) => { //🔥🔥🔥加括号表示解构 {variant} , 拿到参数
 	if(variant === 'Big') return <Button2 as={NewButton} {...rest}/>
 	if(variant === 'Small') return <Button2 as={GhostButton} {...rest}/>
+	return null;
 }

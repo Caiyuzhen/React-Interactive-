@@ -17,7 +17,7 @@ function App() {
 		<Sliders />
 
 
-		{/* ⚡️tsx 多态组件的写法 */}
+		{/* tsx 多态组件的写法 */}
 		<Button as='a' href='http://www.google.com'>Click me</Button>
 		<Button as='img' src='https://images.unsplash.com/photo-1574680722984-851c61fa55fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dGVzdHVyZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'/>
 		<Button as='h1'>大标题</Button>
@@ -28,17 +28,17 @@ function App() {
 		<Banner />
 
 
-		{/* ⚡️jsx 传统多样式组件的写法 */}
+		{/* jsx 传统多样式组件的写法 */}
 		<Button1 rounded variant='LightMode'style={{}} >这是按钮1</Button1>
 		<Button1 rounded variant='DarkMode'style={{}} >这是按钮2</Button1>
 
 
 
-		{/* ⚡️jsx 多态组件实现多样式的写法 */}
+		{/* jsx 多态组件实现多样式的写法 */}
 		<Button2 as='a' style={{}} href='https://github.com/'>Github</Button2>
 		<Button2 as={NewButton} style={{}}>传入多态组件</Button2>
 		<Button2 as={GhostButton} style={{}}>GhostButton</Button2>
-		<DefaultButton variant={Big}>大按钮</DefaultButton>
+		<DefaultButton variant='Big'>大按钮</DefaultButton>
     </div>
   );
 }
