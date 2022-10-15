@@ -7,7 +7,6 @@ import React, { ReactNode } from "react"
 
 
 
-
 // E 这个范型是用来限制 as 的类型的！
 type ButtonOwnProps<E extends React.ElementType = 'button'> ={
 	as? : E 	//动态的方式，用【范型】规范 as 的类型。     方法二是： as? : keyof JSX.IntrinsicElements 		//⚡️⚡️写死的方式，IntrinsicElements 包含了所有的内置的元素类型, 所以能够通过 key 获取到'类名'

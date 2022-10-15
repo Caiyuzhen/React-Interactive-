@@ -1,8 +1,5 @@
 //传统的写法，variant 全部写在一个 button 内
-
-
 import React from 'react';
-
 
 //...rest 拿到剩余参数, ⚡️定义 style 的 props 才能做到样式的合并！
 const Button1 = ({style, rounded, variant, children, ...rest}) => {

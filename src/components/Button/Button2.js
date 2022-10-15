@@ -3,12 +3,11 @@
 
 
 /*JSX 实现多态组件的写法
-		   比如 as 为 p 则是 p 标签！
-		   as 为 h1 则是 h1 标签！ */
+		比如 as 为 p 则是 p 标签！
+		as 为 h1 则是 h1 标签！ */
 
 import React from 'react'
 import { css } from '@emotion/react'
-
 
 
 //as 用来替换元素

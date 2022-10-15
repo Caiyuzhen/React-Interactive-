@@ -5,9 +5,9 @@ import Sliders from './components/Slider/Sliders'
 import Button, {RoundedButton} from './components/Button/Button'
 import Banner from './components/Banner/Banner'
 import Button1 from './components/Button/Button1'
-
 import { Button2, NewButton, GhostButton } from './components/Button/Button2'
 import DefaultButton from './components/Button/MainButton/DefaultButton'
+
 
 
 
