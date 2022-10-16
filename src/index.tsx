@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import PageTwo from './Pages/PageTwo';
+import PageTwo from './Pages/Login';
 import router from './Router/index'
 import { RouterProvider } from 'react-router-dom'//1.引入路由组件根方法
 

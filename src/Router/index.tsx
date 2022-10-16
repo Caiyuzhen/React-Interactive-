@@ -10,19 +10,24 @@
 */
 
 import App from '../App';
-import PageTwo from '../Pages/PageTwo';
-import { createBrowserRouter} from 'react-router-dom'//1.引入路由组件根方法
+import Login from '../Pages/Login';
+import { createBrowserRouter, createHashRouter } from 'react-router-dom'//1.引入路由组件根方法(createBrowserRouter 为用来生产 history 模式的路由，createHashRouter 为用来生成 hash 模式的路由)
+import AboutMe from '../Pages/AboutMe';
 
 
 
-const router = createBrowserRouter([ //2.路由配置
+const router = createHashRouter([ //2.路由配置
 	{
 		path: '/', //什么路径
 		element: <App />//渲染什么组件
 	},
 	{
 		path: '/login', //什么路径
-		element: <PageTwo/>//渲染什么组件
+		element: <Login/>//渲染什么组件
+	},
+	{
+		path: '/about', //什么路径
+		element: <AboutMe />//渲染什么组件
 	}
 ])
 
