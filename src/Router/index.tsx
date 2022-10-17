@@ -11,9 +11,9 @@
 
 import App from '../App';
 import Login from '../Pages/Login';
-import { createBrowserRouter, createHashRouter } from 'react-router-dom'//1.引入路由组件根方法(createBrowserRouter 为用来生产 history 模式的路由，createHashRouter 为用来生成 hash 模式的路由)
 import AboutMe from '../Pages/AboutMe';
-
+import MainLayout from '../Pages/MainLayout';
+import { createBrowserRouter, createHashRouter } from 'react-router-dom'//1.引入路由组件根方法(createBrowserRouter 为用来生产 history 模式的路由，createHashRouter 为用来生成 hash 模式的路由)
 
 
 const router = createHashRouter([ //2.路由配置
@@ -22,13 +22,29 @@ const router = createHashRouter([ //2.路由配置
 		element: <App />//渲染什么组件
 	},
 	{
-		path: '/login', //什么路径
-		element: <Login/>//渲染什么组件
+		path: '/mainLayout', 
+		element: <MainLayout />,
+		children: [ //一、在根路由配置文件中配置 children 属性
+			{
+				path: 'login', 
+				element: <Login/>
+			},
+			{
+				path: 'about', 
+				element: <AboutMe />
+			}
+		]
 	},
-	{
-		path: '/about', //什么路径
-		element: <AboutMe />//渲染什么组件
-	}
+	// {
+	// 	path: '/login', //什么路径
+	// 	element: <Login/>//渲染什么组件
+	// },
+	// {
+	// 	path: '/about', //什么路径
+	// 	// 222.params 传参数, 需要在这里配置 id 等参数的位置
+	// 	// path: '/about/:id',
+	// 	element: <AboutMe />//渲染什么组件
+	// }
 ])
 
 export default router;
