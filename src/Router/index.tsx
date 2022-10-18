@@ -14,6 +14,7 @@ import Login from '../Pages/Login';
 import AboutMe from '../Pages/AboutMe';
 import MainLayout from '../Pages/MainLayout';
 import { createBrowserRouter, createHashRouter } from 'react-router-dom'//1.引入路由组件根方法(createBrowserRouter 为用来生产 history 模式的路由，createHashRouter 为用来生成 hash 模式的路由)
+import NotFound from '../Pages/NotFound';
 
 
 const router = createHashRouter([ //2.路由配置
@@ -26,7 +27,8 @@ const router = createHashRouter([ //2.路由配置
 		element: <MainLayout />,
 		children: [ //一、在根路由配置文件中配置 children 属性
 			{
-				path: 'login', 
+				// path: 'login',
+				index: true, //干掉上面的 path, 🔥用 index 属性来配置默认渲染的二级路由(记得改路径，不然跳转回来会报错！)
 				element: <Login/>
 			},
 			{
@@ -35,6 +37,10 @@ const router = createHashRouter([ //2.路由配置
 			}
 		]
 	},
+	{
+		path: '*',//配置 404 页面
+		element: <NotFound />
+	}
 	// {
 	// 	path: '/login', //什么路径
 	// 	element: <Login/>//渲染什么组件

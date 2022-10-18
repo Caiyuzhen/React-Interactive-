@@ -1,20 +1,26 @@
 import React from 'react'
 import logo from './logo.svg'
 import './App.css'
-import Sliders from './components/Slider/Sliders'
+// import Sliders from './components/Slider/Sliders'
 import Button, {RoundedButton} from './components/Button/Button'
 import Banner from './components/Banner/Banner'
 import Button1 from './components/Button/Button1'
 import { Button2, NewButton, GhostButton } from './components/Button/Button2'
 import DefaultButton from './components/Button/MainButton/DefaultButton'
+import { lazy, Suspense } from 'react' // 懒加载
+import Loading from './components/Loading/Loading'
 
+const Sliders = lazy(()=> import('./components/Slider/Sliders'))//动态加载  懒加载  异步加载
 
 
 
 function App() {
   return (
     <div className="App">
-		<Sliders />
+		{/* 👇包裹需要懒加载的组件, 然后用 fallback 来配置在空档时间要渲染的东西 */}
+		<Suspense fallback={ <Loading/> }>
+			<Sliders />
+		</Suspense>
 
 
 		{/* tsx 多态组件的写法 */}
