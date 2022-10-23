@@ -10,6 +10,8 @@ import DefaultButton from './components/Button/MainButton/DefaultButton'
 import { lazy, Suspense } from 'react' // 懒加载
 import Loading from './components/Loading/Loading'
 import DownloadFile from './components/DownloadFile/DownloadFile'
+import Card from './components/Card/Card'
+
 
 const Sliders = lazy(()=> import('./components/Slider/Sliders'))//动态加载  懒加载  异步加载
 
@@ -18,6 +20,9 @@ const Sliders = lazy(()=> import('./components/Slider/Sliders'))//动态加载  
 function App() {
   return (
     <div className="App">
+		
+		<Card />
+
 		<DownloadFile />
 
 		{/* 👇包裹需要懒加载的组件, 然后用 fallback 来配置在空档时间要渲染的东西 */}

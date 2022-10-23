@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect } from 'react'
+import React, { ReactElement} from 'react'
 import downloadIcon from '../../assets/svg/icon-download.svg'
 
 
@@ -85,16 +85,18 @@ export default function DownloadFile() {
 	
 
 	return (
-	<div style={{zIndex: 10,position: 'absolute'}}>
-		{/* 实现点击下载图片 */}
-		<img src={downloadIcon} onClick={() => downloadData(imgURL)}/>
-		{/* <a download href="" onClick={() => downloadData(imgURL)}> */}{/* </a> */}
+		<>
+			<div style={{zIndex: 10,position: 'absolute'}}>
+				{/* 实现点击下载图片 */}
+				<img src={downloadIcon} onClick={() => downloadData(imgURL)}/>
+				{/* <a download href="" onClick={() => downloadData(imgURL)}> */}{/* </a> */}
 
-		{/* 读取文件并进行下载 */}
-		<input type="file" onChange={(e)=>{downFiles(e.target)}}/>
+				{/* 读取文件并进行下载 */}
+				<input type="file" onChange={(e)=>{downFiles(e.target)}}/>
 
-		{/* 读取文件并在页面中进行预览 */}
-		<input type="file" onChange={(e)=>{readFiles(e.target)}}/>
-	</div>
+				{/* 读取文件并在页面中进行预览 */}
+				<input type="file" onChange={(e)=>{readFiles(e.target)}}/>
+			</div>
+		</>
 	)
 }
