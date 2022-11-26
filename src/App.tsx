@@ -11,6 +11,7 @@ import { lazy, Suspense } from 'react' // 懒加载
 import Loading from './components/Loading/Loading'
 import DownloadFile from './components/DownloadFile/DownloadFile'
 import Card from './components/Card/Card'
+import DynamicColorBg from './components/DynamicColorBg/DynamicColorBg'
 
 
 const Sliders = lazy(()=> import('./components/Slider/Sliders'))//动态加载  懒加载  异步加载
@@ -20,6 +21,7 @@ const Sliders = lazy(()=> import('./components/Slider/Sliders'))//动态加载  
 function App() {
   return (
     <div className="App">
+		<DynamicColorBg />
 		
 		<Card />
 
