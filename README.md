@@ -1,5 +1,5 @@
 # 运行项目
-- yarn satrt
+- yarn start
 
 
 # 核心依赖
